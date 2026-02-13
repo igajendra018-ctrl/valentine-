@@ -88,7 +88,9 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
     <img src="rose_day.png" class="sticker">
     <h1>Rose Day 🌹</h1>
     <div class="message">1.bhrii bahar me ik shaakh pr khila hai gulaab ki jaise tune hatheli pe gaal rakh diyaa</div><br>
-    <div class="message">2.Toh ek shaam aaunga apke ghar pe ek haath me gulaab lekar apko kahunga ki chalo mere sath raat ko tanhaa bethenge,kuch baatein krenge,kuchh shayari sunaunga or me saari raat apko ese hi dekhtaa rahungaa or chand chillata rhega...</div>
+    <div class="message">2.Toh ek shaam aaunga apke ghar pe ek haath me gulaab lekar apko kahunga ki chalo mere sath raat ko tanhaa bethenge,kuch baatein krenge,kuchh shayari sunaunga 
+      or me saari raat apko ese hi dekhtaa rahungaa or chand chillata rhega, main chand hoon! main chand hoon! ki main chaand hoon!
+    </div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -97,7 +99,8 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="propose_day.png" class="sticker">
     <h1>Propose Day 💍</h1>
-    <div class="message">Tumhe kaise btauu priy ,Main tumhe kitna chahta hoon... sapne me tumhe dekhna chahta hoon...</div>
+    <div class="message">Tumhe kaise btauu priy ,Main tumhe kitna chahta hoon apni aankhein band bhi kru sirf sapne me tumhe dekhna chahta hoon tum jab pass nhi hoti toh meri saansein tham si jati hai tumhe ek dinn na dekhu toh meri aankhon se aansu nikl aate hai 
+      bas ye baat ab puchna mat kbhi tum ki priy mein tumhe kese btau Meri aankhein bhi sirf tumhe dekhna chahti hai.</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -106,7 +109,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="chocolate_day.png" class="sticker">
     <h1>Chocolate Day 🍫</h1>
-    <div class="message">Yee to me irl dungaaaaaaaa heehhehee.</div>
+    <div class="message">Yee to me irl dungaaaaaaaa heehheheehehehehehheheh.</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -115,7 +118,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="teddy_day.png" class="sticker">
     <h1>Teddy Day 🧸</h1>
-    <div class="message">ye bhiiii irl hi dungaaaaa hehehhe</div>
+    <div class="message">ye bhiiii irl hi dungaaaaa hehehhehehehhehehhe</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -134,7 +137,8 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="hug_day.png" class="sticker">
     <h1>Hug Day 🫂</h1>
-    <div class="message">Bohot majboor hokr me teri aankhon se nikla... Gale milna na milna to teri marzi hai...</div>
+    <div class="message"> Bohot majboor hokr me teri aankhon se nikla , khushii se kon apne mulk se bahar rha hai 
+      Gale milna na milna to teri marzi hai lekin tere chehre se lgraa hai teraa dill kr rha hai.</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -146,7 +150,8 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
       <source src="valentine_special.mpeg" type="video/mpeg">
     </video>
     <h1>My Valentine 💗</h1>
-    <div class="message">Mere bas me nhi wrna kudrat ka likha hua kaat ta tere hisse me aaye bure dinn koii or kaat ta (me) laariyo sejyada bahaav tha tere har ek lafz me Me ishara nhi kaat sktaa terii baat kyaa kaat ta .</div>
+    <div class="message">Mere bas me nhi wrna kudrat ka likha hua kaat ta tere hisse me aaye bure dinn koii or kaat ta (me) laariyo sejyada bahaav tha tere har ek lafz me 
+      Me ishara nhi kaat sktaa terii baat kyaa kaat ta .</div>
     <span class="back" onclick="backToHome()">← Restart</span>
   </div>
 </div>
@@ -155,7 +160,6 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
 const mainBgm = document.getElementById('mainBgm');
 const dayAudio = document.getElementById('dayAudio');
 
-// IPHONE AUDIO UNLOCK LOGIC
 function startEverything() {
     mainBgm.play();
     go('valentineAsk');
@@ -163,10 +167,10 @@ function startEverything() {
 
 function openDay(id, songSrc) {
     go(id);
-    mainBgm.volume = 0.2;
+    mainBgm.pause(); // BGM Hold
     dayAudio.src = songSrc;
-    dayAudio.load(); 
-    dayAudio.play().catch(e => console.log("iPhone user interaction needed"));
+    dayAudio.load();
+    dayAudio.play();
     
     if(id === 'kiss'){
         document.getElementById('valVideo').play();
@@ -176,8 +180,13 @@ function openDay(id, songSrc) {
 function backToHome() {
     go('home');
     dayAudio.pause();
-    mainBgm.volume = 1.0;
-    document.querySelectorAll('video').forEach(v => v.pause());
+    dayAudio.currentTime = 0;
+    mainBgm.play(); // BGM Resume wahi se
+    
+    document.querySelectorAll('video').forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+    });
 }
 
 function go(id){
@@ -205,9 +214,7 @@ function move(btn) {
     const maxY = window.innerHeight - btn.offsetHeight - 30;
     const randomX = Math.max(15, Math.floor(Math.random() * maxX));
     const randomY = Math.max(15, Math.floor(Math.random() * maxY));
-    btn.style.position = 'fixed';
-    btn.style.left = randomX + 'px';
-    btn.style.top = randomY + 'px';
+    btn.style.position = 'fixed'; btn.style.left = randomX + 'px'; btn.style.top = randomY + 'px';
 }
 </script>
 </body>
