@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Khushi 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:'Caveat',cursive; background:#fffaf3; color:#3b2f2f;
+  display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow-x: hidden;
+}
+.page{ display:none; width: 95%; max-width: 450px; margin: auto; text-align:center; }
+.page.active{display:block}
+
+.paper-note {
+  background: #fff; background-image: linear-gradient(#e1e1e1 1px, transparent 1px);
+  background-size: 100% 30px; padding: 40px 20px; border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative;
+  height: auto; min-height: 300px; display: flex; flex-direction: column; align-items: center;
+  animation: slideIn 0.5s ease;
+}
+@keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.paper-note::before { content: ''; position: absolute; left: 35px; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 0, 0, 0.15); }
+.sticker { width: 180px; filter: drop-shadow(0 5px 8px rgba(0,0,0,0.1)); }
+.intro-sticker { width: 160px; margin-bottom: 10px; }
+h1 { font-family:'Dancing Script',cursive; font-size:32px; margin: 15px 0; color: #d63384; }
+.message { font-size: 24px; line-height: 30px; color: #333; white-space: pre-wrap; padding-left: 45px; text-align: left; width: 100%; }
+
+button { padding: 12px 25px; border: none; border-radius: 25px; background: #ff8fab; color: white; font-family: 'Caveat', cursive; font-size: 20px; cursor: pointer; margin: 10px; position: relative; z-index: 10; }
+.no { background: #ffd1dc; color: #444; position: absolute; transition: 0.1s ease; }
+.buttons { position: relative; width: 100%; height: 80px; margin-top: 10px;}
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.card { background: white; padding: 12px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid #ffe5ec; }
+.card img { width: 65px; }
+.card p { margin: 5px 0 0; font-size: 18px; font-weight: bold; }
+.back { margin-top: 20px; color: #ff8fab; cursor: pointer; font-size: 18px; font-weight: bold; display: block; }
+
+video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.heart { position: fixed; color: #ff8fab; animation: float 4s linear forwards; z-index: 999; pointer-events: none;}
+@keyframes float { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-300px); opacity: 0; } }
+</style>
+</head>
+<body>
+
+<audio id="mainBgm" src="bgm.MPEG" loop preload="auto"></audio>
+<audio id="dayAudio" preload="auto"></audio>
+
+<div class="page active" id="intro">
+  <img src="valentines_day.png" class="intro-sticker">
+  <h1>Hey Khushi! 🤍</h1>
+  <p style="font-size: 24px;">I've been waiting to show you this...</p>
+  <div class="buttons">
+    <button onclick="startEverything()">What is it?</button>
+    <button class="no">Nothing</button>
+  </div>
+</div>
+
+<div class="page" id="valentineAsk">
+  <img src="propose_day.png" class="intro-sticker">
+  <h1>But first...</h1>
+  <p style="font-size: 24px;">Will you be my Valentine? 💗</p>
+  <div class="buttons">
+    <button onclick="go('home')">Yes, I will!</button>
+    <button class="no">No</button>
+  </div>
+</div>
+
+<div class="page" id="home">
+  <h1>Valentine Week 🤍</h1>
+  <div class="grid">
+    <div class="card" onclick="openDay('rose', 'rose.MPEG')"><img src="rose_day.png"><p>Rose</p></div>
+    <div class="card" onclick="openDay('propose', 'propose.MPEG')"><img src="propose_day.png"><p>Propose</p></div>
+    <div class="card" onclick="openDay('chocolate', 'chocolate.MPEG')"><img src="chocolate_day.png"><p>Chocolate</p></div>
+    <div class="card" onclick="openDay('teddy', 'teddy.MPEG')"><img src="teddy_day.png"><p>Teddy</p></div>
+    <div class="card" onclick="openDay('promise', 'promise_song.MPEG')"><img src="promise_day.png"><p>Promise</p></div>
+    <div class="card" onclick="openDay('hug', 'hug.MPEG')"><img src="hug_day.png"><p>Hug</p></div>
+    <div class="card" style="grid-column: span 2;" onclick="openDay('kiss', 'valentine_special.MPEG')"><img src="french_kiss.png"><p>My Forever Valentine</p></div>
+  </div>
+</div>
+
+<div class="page" id="rose">
+  <div class="paper-note">
+    <img src="rose_day.png" class="sticker">
+    <h1>Rose Day 🌹</h1>
+    <div class="message">1.bhrii bahar me ik shaakh pr khila hai gulaab ki jaise tune hatheli pe gaal rakh diyaa</div><br>
+    <div class="message">2.Toh ek shaam aaunga apke ghar pe ek haath me gulaab lekar apko kahunga ki chalo mere sath raat ko tanhaa bethenge,kuch baatein krenge,kuchh shayari sunaunga or me saari raat apko ese hi dekhtaa rahungaa or chand chillata rhega, main chand hoon! main chand hoon! ki main chaand hoon!</div>
+    <span class="back" onclick="backToHome()">← Back</span>
+  </div>
+</div>
+
+<div class="page" id="propose">
+  <div class="paper-note">
+    <img src="propose_day.png" class="sticker">
+    <h1>Propose Day 💍</h1>
+    <div class="message">Tumhe kaise btauu priy ,Main tumhe kitna chahta hoon apni aankhein band bhi kru sirf sapne me tumhe dekhna chahta hoon tum jab pass nhi hoti toh meri saansein tham si jati hai tumhe ek dinn na dekhu toh meri aankhon se aansu nikl aate hai bas ye baat ab puchna mat kbhi tum ki priy mein tumhe kese btau Meri aankhein bhi sirf tumhe dekhna chahti hai.</div>
+    <span class="back" onclick="backToHome()">← Back</span>
+  </div>
+</div>
+
+<div class="page" id="chocolate">
+  <div class="paper-note">
+    <img src="chocolate_day.png" class="sticker">
+    <h1>Chocolate Day 🍫</h1>
+    <div class="message">Yee to me irl dungaaaaaaaa heehheheehehehehehheheh.</div>
+    <span class="back" onclick="backToHome()">← Back</span>
+  </div>
+</div>
+
+<div class="page" id="teddy">
+  <div class="paper-note">
+    <img src="teddy_day.png" class="sticker">
+    <h1>Teddy Day 🧸</h1>
+    <div class="message">ye bhiiii irl hi dungaaaaa hehehhehehehhehehhe</div>
+    <span class="back" onclick="backToHome()">← Back</span>
+  </div>
+</div>
+
+<div class="page" id="promise">
+  <div class="paper-note">
+    <img src="promise_day.png" class="sticker">
+    <h1>Promise Day 🤍</h1>
+    <video id="promVideo" controls><source src="promise.mp4" type="video/mp4"></video>
+    <div class="message">chaar kadam bss chaar kadam chldoo na sathh mereeeeeee🥹.</div>
+    <span class="back" onclick="backToHome()">← Back</span>
+  </div>
+</div>
+
+<div class="page" id="hug">
+  <div class="paper-note">
+    <img src="hug_day.png" class="sticker">
+    <h1>Hug Day 🫂</h1>
+    <div class="message"> Bohot majboor hokr me teri aankhon se nikla , khushii se kon apne mulk se bahar rha hai Gale milna na milna to teri marzi hai lekin tere chehre se lgraa hai teraa dill kr rha hai.</div>
+    <span class="back" onclick="backToHome()">← Back</span>
+  </div>
+</div>
+
+<div class="page" id="kiss">
+  <div class="paper-note">
+    <video id="valVideo" autoplay loop muted playsinline>
+      <source src="valentine_special.mp4" type="video/mp4">
+      <source src="valentine_special.MPEG" type="video/mpeg">
+    </video>
+    <h1>Rasmalaiiiiiiiiiiiiiii 💗</h1>
+    <div class="message">Mere bas me nhi wrna kudrat ka likha hua kaat ta tere hisse me aaye bure dinn koii or kaat ta (me) laariyo sejyada bahaav tha tere har ek lafz me Me ishara nhi kaat sktaa terii baat kyaa kaat ta .</div>
+    <span class="back" onclick="backToHome()">← Restart</span>
+  </div>
+</div>
+
+<script>
+const mainBgm = document.getElementById('mainBgm');
+const dayAudio = document.getElementById('dayAudio');
+
+// Yahan se music shuru hoga pehle click par
+function startEverything() {
+  mainBgm.play().catch(e => console.log("Audio play failed, waiting for user interaction"));
+  go('valentineAsk');
+}
+
+function go(id){
+  vibrate(); hearts();
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function openDay(id, songSrc) {
+  go(id);
+  mainBgm.volume = 0.2; // Background music dheera karein
+  dayAudio.src = songSrc;
+  dayAudio.play();
+  
+  if(id === 'kiss'){
+    const valVid = document.getElementById('valVideo');
+    valVid.play();
+  }
+}
+
+function backToHome() {
+  go('home');
+  dayAudio.pause();
+  dayAudio.currentTime = 0;
+  mainBgm.volume = 1.0; // Background music wapas full
+  
+  const vids = document.querySelectorAll('video');
+  vids.forEach(v => v.pause());
+}
+
+function vibrate(){ if(navigator.vibrate) navigator.vibrate(40); }
+
+function hearts(){
+  for(let i=0;i<8;i++){
+    let h=document.createElement("div"); h.className="heart"; h.innerHTML="♥";
+    h.style.left=Math.random()*100+"vw"; h.style.bottom="20px";
+    h.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(h); setTimeout(()=>h.remove(),4000);
+  }
+}
+
+document.querySelectorAll('.no').forEach(btn => {
+  btn.addEventListener('mouseover', () => move(btn));
+  btn.addEventListener('touchstart', (e) => { e.preventDefault(); move(btn); });
+});
+
+function move(btn) {
+  const maxX = window.innerWidth - btn.offsetWidth - 30;
+  const maxY = window.innerHeight - btn.offsetHeight - 30;
+  const randomX = Math.max(15, Math.floor(Math.random() * maxX));
+  const randomY = Math.max(15, Math.floor(Math.random() * maxY));
+  btn.style.position = 'fixed';
+  btn.style.left = randomX + 'px';
+  btn.style.top = randomY + 'px';
+}
+</script>
+</body>
+</html>
