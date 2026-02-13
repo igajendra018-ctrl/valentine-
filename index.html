@@ -39,7 +39,6 @@ button { padding: 12px 25px; border: none; border-radius: 25px; background: #ff8
 .card img { width: 65px; }
 .card p { margin: 5px 0 0; font-size: 18px; font-weight: bold; }
 .back { margin-top: 20px; color: #ff8fab; cursor: pointer; font-size: 18px; font-weight: bold; display: block; }
-
 video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
 .heart { position: fixed; color: #ff8fab; animation: float 4s linear forwards; z-index: 999; pointer-events: none;}
@@ -48,7 +47,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
 </head>
 <body>
 
-<audio id="mainBgm" src="bgm.MPEG" loop preload="auto"></audio>
+<audio id="mainBgm" src="bgm.mpeg" loop preload="auto"></audio>
 <audio id="dayAudio" preload="auto"></audio>
 
 <div class="page active" id="intro">
@@ -74,13 +73,13 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
 <div class="page" id="home">
   <h1>Valentine Week 🤍</h1>
   <div class="grid">
-    <div class="card" onclick="openDay('rose', 'rose.MPEG')"><img src="rose_day.png"><p>Rose</p></div>
-    <div class="card" onclick="openDay('propose', 'propose.MPEG')"><img src="propose_day.png"><p>Propose</p></div>
-    <div class="card" onclick="openDay('chocolate', 'chocolate.MPEG')"><img src="chocolate_day.png"><p>Chocolate</p></div>
-    <div class="card" onclick="openDay('teddy', 'teddy.MPEG')"><img src="teddy_day.png"><p>Teddy</p></div>
-    <div class="card" onclick="openDay('promise', 'promise_song.MPEG')"><img src="promise_day.png"><p>Promise</p></div>
-    <div class="card" onclick="openDay('hug', 'hug.MPEG')"><img src="hug_day.png"><p>Hug</p></div>
-    <div class="card" style="grid-column: span 2;" onclick="openDay('kiss', 'valentine_special.MPEG')"><img src="french_kiss.png"><p>My Forever Valentine</p></div>
+    <div class="card" onclick="openDay('rose', 'rose.mpeg')"><img src="rose_day.png"><p>Rose</p></div>
+    <div class="card" onclick="openDay('propose', 'propose.mpeg')"><img src="propose_day.png"><p>Propose</p></div>
+    <div class="card" onclick="openDay('chocolate', 'chocolate.mpeg')"><img src="chocolate_day.png"><p>Chocolate</p></div>
+    <div class="card" onclick="openDay('teddy', 'teddy.mpeg')"><img src="teddy_day.png"><p>Teddy</p></div>
+    <div class="card" onclick="openDay('promise', 'promise_song.mpeg')"><img src="promise_day.png"><p>Promise</p></div>
+    <div class="card" onclick="openDay('hug', 'hug.mpeg')"><img src="hug_day.png"><p>Hug</p></div>
+    <div class="card" style="grid-column: span 2;" onclick="openDay('kiss', 'valentine_special.mpeg')"><img src="french_kiss.png"><p>My Forever Valentine</p></div>
   </div>
 </div>
 
@@ -89,7 +88,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
     <img src="rose_day.png" class="sticker">
     <h1>Rose Day 🌹</h1>
     <div class="message">1.bhrii bahar me ik shaakh pr khila hai gulaab ki jaise tune hatheli pe gaal rakh diyaa</div><br>
-    <div class="message">2.Toh ek shaam aaunga apke ghar pe ek haath me gulaab lekar apko kahunga ki chalo mere sath raat ko tanhaa bethenge,kuch baatein krenge,kuchh shayari sunaunga or me saari raat apko ese hi dekhtaa rahungaa or chand chillata rhega, main chand hoon! main chand hoon! ki main chaand hoon!</div>
+    <div class="message">2.Toh ek shaam aaunga apke ghar pe ek haath me gulaab lekar apko kahunga ki chalo mere sath raat ko tanhaa bethenge,kuch baatein krenge,kuchh shayari sunaunga or me saari raat apko ese hi dekhtaa rahungaa or chand chillata rhega...</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -98,7 +97,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="propose_day.png" class="sticker">
     <h1>Propose Day 💍</h1>
-    <div class="message">Tumhe kaise btauu priy ,Main tumhe kitna chahta hoon apni aankhein band bhi kru sirf sapne me tumhe dekhna chahta hoon tum jab pass nhi hoti toh meri saansein tham si jati hai tumhe ek dinn na dekhu toh meri aankhon se aansu nikl aate hai bas ye baat ab puchna mat kbhi tum ki priy mein tumhe kese btau Meri aankhein bhi sirf tumhe dekhna chahti hai.</div>
+    <div class="message">Tumhe kaise btauu priy ,Main tumhe kitna chahta hoon... sapne me tumhe dekhna chahta hoon...</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -107,7 +106,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="chocolate_day.png" class="sticker">
     <h1>Chocolate Day 🍫</h1>
-    <div class="message">Yee to me irl dungaaaaaaaa heehheheehehehehehheheh.</div>
+    <div class="message">Yee to me irl dungaaaaaaaa heehhehee.</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -116,7 +115,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="teddy_day.png" class="sticker">
     <h1>Teddy Day 🧸</h1>
-    <div class="message">ye bhiiii irl hi dungaaaaa hehehhehehehhehehhe</div>
+    <div class="message">ye bhiiii irl hi dungaaaaa hehehhe</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -125,7 +124,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="promise_day.png" class="sticker">
     <h1>Promise Day 🤍</h1>
-    <video id="promVideo" controls><source src="promise.mp4" type="video/mp4"></video>
+    <video id="promVideo" playsinline controls><source src="promise.mp4" type="video/mp4"></video>
     <div class="message">chaar kadam bss chaar kadam chldoo na sathh mereeeeeee🥹.</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
@@ -135,7 +134,7 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <img src="hug_day.png" class="sticker">
     <h1>Hug Day 🫂</h1>
-    <div class="message"> Bohot majboor hokr me teri aankhon se nikla , khushii se kon apne mulk se bahar rha hai Gale milna na milna to teri marzi hai lekin tere chehre se lgraa hai teraa dill kr rha hai.</div>
+    <div class="message">Bohot majboor hokr me teri aankhon se nikla... Gale milna na milna to teri marzi hai...</div>
     <span class="back" onclick="backToHome()">← Back</span>
   </div>
 </div>
@@ -144,9 +143,9 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
   <div class="paper-note">
     <video id="valVideo" autoplay loop muted playsinline>
       <source src="valentine_special.mp4" type="video/mp4">
-      <source src="valentine_special.MPEG" type="video/mpeg">
+      <source src="valentine_special.mpeg" type="video/mpeg">
     </video>
-    <h1>Rasmalaiiiiiiiiiiiiiii 💗</h1>
+    <h1>My Valentine 💗</h1>
     <div class="message">Mere bas me nhi wrna kudrat ka likha hua kaat ta tere hisse me aaye bure dinn koii or kaat ta (me) laariyo sejyada bahaav tha tere har ek lafz me Me ishara nhi kaat sktaa terii baat kyaa kaat ta .</div>
     <span class="back" onclick="backToHome()">← Restart</span>
   </div>
@@ -156,43 +155,39 @@ video { width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0; box-
 const mainBgm = document.getElementById('mainBgm');
 const dayAudio = document.getElementById('dayAudio');
 
-// Yahan se music shuru hoga pehle click par
+// IPHONE AUDIO UNLOCK LOGIC
 function startEverything() {
-  mainBgm.play().catch(e => console.log("Audio play failed, waiting for user interaction"));
-  go('valentineAsk');
-}
-
-function go(id){
-  vibrate(); hearts();
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
+    mainBgm.play();
+    go('valentineAsk');
 }
 
 function openDay(id, songSrc) {
-  go(id);
-  mainBgm.volume = 0.2; // Background music dheera karein
-  dayAudio.src = songSrc;
-  dayAudio.play();
-  
-  if(id === 'kiss'){
-    const valVid = document.getElementById('valVideo');
-    valVid.play();
-  }
+    go(id);
+    mainBgm.volume = 0.2;
+    dayAudio.src = songSrc;
+    dayAudio.load(); 
+    dayAudio.play().catch(e => console.log("iPhone user interaction needed"));
+    
+    if(id === 'kiss'){
+        document.getElementById('valVideo').play();
+    }
 }
 
 function backToHome() {
-  go('home');
-  dayAudio.pause();
-  dayAudio.currentTime = 0;
-  mainBgm.volume = 1.0; // Background music wapas full
-  
-  const vids = document.querySelectorAll('video');
-  vids.forEach(v => v.pause());
+    go('home');
+    dayAudio.pause();
+    mainBgm.volume = 1.0;
+    document.querySelectorAll('video').forEach(v => v.pause());
+}
+
+function go(id){
+    vibrate(); hearts();
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
 }
 
 function vibrate(){ if(navigator.vibrate) navigator.vibrate(40); }
-
 function hearts(){
   for(let i=0;i<8;i++){
     let h=document.createElement("div"); h.className="heart"; h.innerHTML="♥";
@@ -201,20 +196,18 @@ function hearts(){
     document.body.appendChild(h); setTimeout(()=>h.remove(),4000);
   }
 }
-
 document.querySelectorAll('.no').forEach(btn => {
-  btn.addEventListener('mouseover', () => move(btn));
-  btn.addEventListener('touchstart', (e) => { e.preventDefault(); move(btn); });
+    btn.addEventListener('mouseover', () => move(btn));
+    btn.addEventListener('touchstart', (e) => { e.preventDefault(); move(btn); });
 });
-
 function move(btn) {
-  const maxX = window.innerWidth - btn.offsetWidth - 30;
-  const maxY = window.innerHeight - btn.offsetHeight - 30;
-  const randomX = Math.max(15, Math.floor(Math.random() * maxX));
-  const randomY = Math.max(15, Math.floor(Math.random() * maxY));
-  btn.style.position = 'fixed';
-  btn.style.left = randomX + 'px';
-  btn.style.top = randomY + 'px';
+    const maxX = window.innerWidth - btn.offsetWidth - 30;
+    const maxY = window.innerHeight - btn.offsetHeight - 30;
+    const randomX = Math.max(15, Math.floor(Math.random() * maxX));
+    const randomY = Math.max(15, Math.floor(Math.random() * maxY));
+    btn.style.position = 'fixed';
+    btn.style.left = randomX + 'px';
+    btn.style.top = randomY + 'px';
 }
 </script>
 </body>
